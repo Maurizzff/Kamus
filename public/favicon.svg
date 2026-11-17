@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd" />
+      <stop offset="100%" stop-color="#0a58ca" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffc107" />
+      <stop offset="100%" stop-color="#fd7e14" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#grad)" />
+  <!-- Wayang / Gunungan inspired crown accent -->
+  <path d="M64 20 L76 38 L88 34 L82 48 L96 52 L64 64 L32 52 L46 48 L40 34 L52 38 Z" fill="url(#gold)" opacity="0.95" />
+  <!-- Lettering KSBJ -->
+  <text x="64" y="94" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="30" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">KSBJ</text>
+  <circle cx="64" cy="110" r="4" fill="#ffc107" />
+</svg>
+

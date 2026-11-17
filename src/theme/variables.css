@@ -1,2 +1,15 @@
+/**
+ * ==============================================================================
+ * FILE: theme/variables.css (Variabel Tema Bawaan Ionic)
+ * ==============================================================================
+ * 1. INI BUAT APA:
+ *    Sebagai berkas penampung variabel CSS kustom untuk tema framework Ionic.
+ * 2. FUNGSINYA APA:
+ *    Menyimpan palet warna dasar sistem Ionic jika diperlukan kustomisasi lanjutan.
+ * 3. AMBILNYA DARI MANA:
+ *    Diimpor secara global di `src/App.jsx`.
+ * ==============================================================================
+ */
+
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */

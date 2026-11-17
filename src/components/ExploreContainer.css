@@ -1,3 +1,13 @@
+/**
+ * ==============================================================================
+ * FILE: ExploreContainer.css (Styling untuk ExploreContainer Starter)
+ * ==============================================================================
+ * 1. INI BUAT APA: Styling CSS bawaan template Ionic ExploreContainer
+ * 2. FUNGSINYA APA: Mengatur posisi teks di tengah layar secara vertikal dan horizontal
+ * 3. AMBILNYA DARI MANA: Diterapkan pada komponen ExploreContainer.tsx
+ * ==============================================================================
+ */
+
 .container {
   text-align: center;
   position: absolute;

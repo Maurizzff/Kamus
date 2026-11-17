@@ -1,0 +1,357 @@
+/**
+ * ==============================================================================
+ * FILE: theme/custom.css (Kustomisasi Gaya & Desain Antarmuka KSBJ)
+ * ==============================================================================
+ * 1. INI BUAT APA:
+ *    Sebagai berkas stylesheet utama untuk mengatur estetika visual, warna tema,
+ *    tipografi font modern (Plus Jakarta Sans), komponen kustom (badge kata,
+ *    top bar, bottom bar, modal, dan kartu detail), serta tata letak responsif.
+ * 
+ * 2. FUNGSINYA APA:
+ *    - Menyediakan variabel warna utama (`--ksbj-primary: #0d6efd`, dll).
+ *    - Menyesuaikan tampilan kartu kamus agar sesuai dengan tangkapan layar referensi.
+ *    - Mengatur posisi melayang (sticky/fixed) pada TopBar dan BottomBar mobile.
+ *    - Mengatur transisi animasi hover dan tampilan badge aktif.
+ * 
+ * 3. AMBILNYA DARI MANA:
+ *    - Diimpor secara global di `src/App.jsx`
+ * ==============================================================================
+ */
+
+/* Custom Styles for KSBJ - Kamus Slang Bahasa Jawa */
+:root {
+  --ksbj-primary: #0d6efd;
+  --ksbj-primary-dark: #0b5ed7;
+  --ksbj-primary-light: #e7f1ff;
+  --ksbj-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ksbj-bg: #f8f9fa;
+  --ksbj-card-bg: #ffffff;
+  --ksbj-border: #e9ecef;
+}
+
+body, ion-app, ion-content {
+  font-family: var(--ksbj-font) !important;
+  background-color: var(--ksbj-bg) !important;
+  color: #212529;
+}
+
+/* Header & Top Bar */
+.ksbj-topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  transition: all 0.2s ease-in-out;
+}
+
+.ksbj-brand {
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: -0.5px;
+  color: #111827;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ksbj-brand-badge {
+  background: linear-gradient(135deg, #0d6efd, #0052cc);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+.ksbj-nav-link {
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ksbj-nav-link:hover {
+  color: #0d6efd;
+  background-color: #f3f4f6;
+}
+
+.ksbj-nav-link.active {
+  color: #0d6efd;
+  font-weight: 600;
+  background-color: #eff6ff;
+}
+
+/* Hero Section */
+.ksbj-hero {
+  text-align: center;
+  padding: 2.8rem 1rem 1.8rem;
+}
+
+.ksbj-hero-title {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.8px;
+  margin-bottom: 0.5rem;
+}
+
+.ksbj-hero-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: #6b7280;
+  max-width: 620px;
+  margin: 0 auto 1.8rem;
+}
+
+/* Search Box Container */
+.ksbj-search-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ksbj-search-input {
+  border-radius: 12px 0 0 12px !important;
+  border: 1.5px solid #d1d5db !important;
+  padding: 0.85rem 1.25rem !important;
+  font-size: 1rem !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.2s ease;
+}
+
+.ksbj-search-input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15) !important;
+}
+
+.ksbj-search-btn {
+  border-radius: 0 12px 12px 0 !important;
+  padding: 0.85rem 1.75rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* Word Chips Grid (like in Screenshot 1) */
+.ksbj-word-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #0d6efd;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.ksbj-word-badge:hover {
+  background-color: #eff6ff;
+  border-color: #0d6efd;
+  color: #0b5ed7;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(13, 110, 253, 0.12);
+}
+
+.ksbj-word-badge.active {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border-color: #0d6efd;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.25);
+}
+
+/* Detail Card (like in Screenshot 2) */
+.ksbj-detail-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 2.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.ksbj-category-pill {
+  display: inline-block;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.ksbj-word-heading {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.5px;
+}
+
+.ksbj-definition-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+}
+
+.ksbj-definition-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.ksbj-example-box {
+  background-color: #f9fafb;
+  border-left: 4px solid #0d6efd;
+  padding: 1rem 1.25rem;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 1.75rem;
+}
+
+.ksbj-contributor-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* Bottom Bar (Responsive Footer Navigation) */
+.ksbj-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1040;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.04);
+  padding: 0 8px;
+}
+
+.ksbj-bottom-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: all 0.15s ease;
+  min-width: 64px;
+}
+
+.ksbj-bottom-item i {
+  font-size: 1.25rem;
+  margin-bottom: 2px;
+}
+
+.ksbj-bottom-item:hover, .ksbj-bottom-item.active {
+  color: #0d6efd;
+}
+
+.ksbj-bottom-item.active {
+  background-color: #eff6ff;
+}
+
+/* Content bottom padding so fixed footer doesn't overlap */
+.ksbj-content-padding {
+  padding-bottom: 80px;
+}
+
+/* Toast alert fixed floating */
+.ksbj-floating-toast {
+  position: fixed;
+  bottom: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1060;
+  min-width: 300px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  animation: slideUpFade 0.3s ease;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Modal styling */
+.ksbj-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1070;
+  padding: 16px;
+}
+
+.ksbj-modal-content {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e5e7eb;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
